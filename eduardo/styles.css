@@ -1,22 +1,39 @@
-/* =========================
-styles.css
-========================= */
-body {
-  font-family: 'Segoe UI', sans-serif;
+/* ===== RESET ===== */
+* {
   margin: 0;
-  background: #fdf6f0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+/* ===== GRID GENERAL ===== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fdf6f0;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+}
+
+/* ===== HEADER (FLEX) ===== */
 header {
   background: #4b2e2e;
   color: white;
   padding: 15px;
-  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
 }
 
 nav a {
   color: #f5e6dc;
-  margin: 0 10px;
   text-decoration: none;
   font-weight: bold;
 }
@@ -25,22 +42,35 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* ===== HERO (GRID) ===== */
 .hero {
-  text-align: center;
   padding: 20px;
 }
 
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: center;
+}
+
 .hero img {
-  width: 90%;
+  width: 100%;
   max-height: 350px;
   object-fit: cover;
   border-radius: 15px;
 }
 
-.cards {
+.hero-text {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ===== CARDS ===== */
+.cards {
+  display: grid; /* 🔥 cambiamos de flex a grid */
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   padding: 20px;
 }
@@ -49,9 +79,13 @@ nav a:hover {
   background: white;
   padding: 15px;
   border-radius: 15px;
-  width: 220px;
   text-align: center;
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
   transition: transform 0.3s;
 }
 
@@ -64,25 +98,35 @@ nav a:hover {
   border-radius: 10px;
 }
 
+/* ===== ABOUT (GRID) ===== */
 .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
   padding: 20px;
+  gap: 20px;
   text-align: center;
 }
 
 .content img {
-  width: 80%;
+  width: 100%;
   border-radius: 15px;
+}
+
+/* ===== FORM (FLEX) ===== */
+.form-container {
+  display: flex;
+  justify-content: center;
 }
 
 form {
   display: flex;
   flex-direction: column;
   width: 300px;
-  margin: 20px auto;
+  gap: 10px;
 }
 
 input, textarea {
-  margin: 10px 0;
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -101,10 +145,27 @@ button:hover {
   background: #4b2e2e;
 }
 
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
   padding: 15px;
   background: #3b2b2b;
   color: white;
-  margin-top: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+
+  .hero-content,
+  .content {
+    grid-template-columns: 1fr;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+  }
 }

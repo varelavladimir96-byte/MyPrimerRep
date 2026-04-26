@@ -1,15 +1,3 @@
-<!-- =========================
-Sitio Web Cafetería ☕ (Español)
-Estructura:
-- index.html
-- about.html
-- contact.html
-- styles.css
-========================= -->
-
-<!-- =========================
-index.html
-========================= -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,41 +6,49 @@ index.html
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <h1>☕ Brew Haven</h1>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="about.html">Nuestra Historia</a>
-      <a href="contact.html">Visítanos</a>
-    </nav>
-  </header>
 
-  <section class="hero">
+<header>
+  <h1>☕ Brew Haven</h1>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="about.html">Nuestra Historia</a>
+    <a href="contact.html">Visítanos</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
     <img src="images/hero.jpg" alt="Cafetería">
-    <h2>Tu dosis diaria de café</h2>
-    <p>Felicidad recién preparada en cada taza.</p>
-  </section>
+    <div class="hero-text">
+      <h2>Tu dosis diaria de café</h2>
+      <p>Felicidad recién preparada en cada taza.</p>
+    </div>
+  </div>
+</section>
 
-  <section class="cards">
-    <div class="card">
-      <img src="images/Latte.jpg" alt="Latte">
-      <h3>Latte Especial</h3>
-      <p>Espresso suave con leche cremosa.</p>
-    </div>
-    <div class="card">
-      <img src="images/coffee beans.jpg" alt="Granos de café">
-      <h3>Granos Premium</h3>
-      <p>Seleccionados y tostados a la perfección.</p>
-    </div>
-    <div class="card">
-      <img src="images/dessert.jpg" alt="Postre">
-      <h3>Postres</h3>
-      <p>El complemento perfecto para tu café.</p>
-    </div>
-  </section>
+<section class="cards">
+  <div class="card">
+    <img src="images/latte.jpg">
+    <h3>Latte Especial</h3>
+    <p>Espresso suave con leche cremosa.</p>
+  </div>
 
-  <footer>
-    <p>© 2026 Brew Haven</p>
-  </footer>
+  <div class="card">
+    <img src="images/coffee-beans.jpg">
+    <h3>Granos Premium</h3>
+    <p>Seleccionados y tostados a la perfección.</p>
+  </div>
+
+  <div class="card">
+    <img src="images/dessert.jpg">
+    <h3>Postres</h3>
+    <p>El complemento perfecto para tu café.</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Brew Haven</p>
+</footer>
+
 </body>
 </html>
